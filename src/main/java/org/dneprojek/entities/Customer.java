@@ -1,20 +1,32 @@
-package org.dneprojek;
+package org.dneprojek.entities;
 
 
-public class Customers {
+import org.dneprojek.enums.Gender;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
+
+@Entity
+public class Customer {
+    @Id
+    private Long id;
+
     private String name;
     private String phone;
+    @Enumerated(EnumType.STRING)
     private Gender gender;
-    private String eMail;
+    private String email;
 
-    public Customers(){
-
+    public Customer() {
     }
 
-    public Customers(String name, Gender gender, String phone) {
+    public Customer(String name, Gender gender, String phone, String email) {
         this.name = name;
         this.gender = gender;
         this.phone = phone;
+        this.email = email;
     }
 
     public String getName() {
@@ -41,11 +53,11 @@ public class Customers {
         this.gender = gender;
     }
 
-    public String geteMail() {
-        return eMail;
+    public String getEmail() {
+        return email;
     }
 
-    public void seteMail(String eMail) {
-        this.eMail = eMail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

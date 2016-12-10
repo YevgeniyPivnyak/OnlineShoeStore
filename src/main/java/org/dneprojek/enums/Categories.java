@@ -1,4 +1,4 @@
-package org.dneprojek;
+package org.dneprojek.enums;
 
 public enum Categories {
     FORMAN, FORWOMEN, FORCHILDREN;

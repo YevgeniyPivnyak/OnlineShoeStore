@@ -1,14 +1,28 @@
-package org.dneprojek;
+package org.dneprojek.entities;
 
 
-public class Shoes {
+import org.dneprojek.enums.Categories;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
+
+@Entity
+public class Good {
+    @Id
+    private Long id;
+
     private String season;
+    @Enumerated(EnumType.STRING)
     private Categories categories;
     private int size;
     private double price;
 
-    public Shoes (String season, Categories categories, int size, double price){
+    public Good() {
+    }
 
+    public Good(String season, Categories categories, int size, double price){
     }
 
     public String getSeason() {
